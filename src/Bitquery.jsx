@@ -96,8 +96,11 @@ const Bitquery = ({chartPeriod, setChartPeriod}) =>{
   
   return (<>
 
-<StyledGridContainer container>
+        <StyledGridContainer container>
             <StyledGridItem item>
+            <StyledGridItem item xs={6} sm={6} md={6} lg={6} xl={6} >
+                <HokkPrice />
+            </StyledGridItem>    
                 <FormControl name="chartPeriod">
                     <InputLabel id="demo-simple-select-helper-label">chartPeriod</InputLabel>
                     <Select
@@ -115,7 +118,7 @@ const Bitquery = ({chartPeriod, setChartPeriod}) =>{
             </StyledGridItem>           
           </StyledGridContainer>
   
-  < CircularProgress />
+        < CircularProgress />
   
   </>)
 
