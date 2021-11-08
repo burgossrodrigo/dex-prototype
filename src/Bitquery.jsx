@@ -5,6 +5,7 @@ import { CircularProgress, FormControl,
          InputLabel, Select, MenuItem } from '@mui/material';
 import { AreaChart, Area, ResponsiveContainer } from 'recharts';
 import { StyledGridContainer, StyledGridItem } from './style'
+import HokkPrice from './components/hokkprice';
 import moment from 'moment';
 
 
@@ -168,7 +169,10 @@ const Bitquery = ({chartPeriod, setChartPeriod}) =>{
           
       <>   
           <StyledGridContainer container>
-            <StyledGridItem item>
+          <StyledGridItem item xs={6} sm={6} md={6} lg={6} xl={6} >
+                <HokkPrice />
+            </StyledGridItem>   
+            <StyledGridItem item xs={6} sm={6} md={6} lg={6} xl={6} >
                 <FormControl name="chartPeriod">
                     <InputLabel id="demo-simple-select-helper-label">chartPeriod</InputLabel>
                     <Select
@@ -183,7 +187,7 @@ const Bitquery = ({chartPeriod, setChartPeriod}) =>{
                         <MenuItem value={"month"}>Month</MenuItem>    
                     </Select>
                 </FormControl>
-            </StyledGridItem>            
+            </StyledGridItem>         
           </StyledGridContainer>
           <ResponsiveContainer width='100%' height={400} >
                     <AreaChart data={changedData}>                  
