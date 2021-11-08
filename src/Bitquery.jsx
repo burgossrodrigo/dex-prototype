@@ -7,7 +7,15 @@ import { AreaChart, Area, ResponsiveContainer } from 'recharts';
 import { StyledGridContainer, StyledGridItem } from './style'
 import HokkPrice from './components/hokkprice';
 import moment from 'moment';
+import styled from 'styled-components';
 
+const StyledCircularProgress = styled(CircularProgress)`
+
+  margin-top: 50%;
+  margin-left: 50%
+  position: relative;
+
+`
 
 
 const Bitquery = ({chartPeriod, setChartPeriod}) =>{
@@ -97,10 +105,10 @@ const Bitquery = ({chartPeriod, setChartPeriod}) =>{
   return (<>
 
         <StyledGridContainer container>
-            <StyledGridItem item>
             <StyledGridItem item xs={6} sm={6} md={6} lg={6} xl={6} >
                 <HokkPrice />
-            </StyledGridItem>    
+            </StyledGridItem>
+            <StyledGridItem item>    
                 <FormControl name="chartPeriod">
                     <InputLabel id="demo-simple-select-helper-label">chartPeriod</InputLabel>
                     <Select
@@ -115,11 +123,13 @@ const Bitquery = ({chartPeriod, setChartPeriod}) =>{
                         <MenuItem value={"month"}>Month</MenuItem>    
                     </Select>
                 </FormControl>
+            </StyledGridItem>
+            <StyledGridItem xs={3} sm={3} md={3} lg={3} xl={3}>
+            <StyledCircularProgress />
             </StyledGridItem>           
           </StyledGridContainer>
-  
-        < CircularProgress />
-  
+      
+          
   </>)
 
 
@@ -190,13 +200,17 @@ const Bitquery = ({chartPeriod, setChartPeriod}) =>{
                         <MenuItem value={"month"}>Month</MenuItem>    
                     </Select>
                 </FormControl>
-            </StyledGridItem>         
-          </StyledGridContainer>
-          <ResponsiveContainer width='100%' height={400} >
+            </StyledGridItem>
+            <StyledGridItem xs={12} sm={12} md={12} lg={12} xl={12}>
+            <ResponsiveContainer width='100%' height={400} >
                     <AreaChart data={changedData}>                  
                         <Area dataKey="value" />
                     </AreaChart>
-                </ResponsiveContainer> 
+                </ResponsiveContainer>
+            </StyledGridItem>         
+          </StyledGridContainer>
+
+    
       </>
       
   
