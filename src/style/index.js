@@ -76,7 +76,6 @@ export const MainWrapper = styled(Box)`
 export const RightPainel = styled(Box)`
 
     width: 34%;
-    box-shadow: 0px 0px 3px 3px;
     height: 100vh;
     float: right;
     z-index: 10001;
