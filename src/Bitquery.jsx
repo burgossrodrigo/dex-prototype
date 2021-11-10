@@ -7,13 +7,24 @@ import { AreaChart, Area, ResponsiveContainer } from 'recharts';
 import { StyledGridContainer, StyledGridItem } from './style'
 import HokkPrice from './components/hokkprice';
 import moment from 'moment';
-import styled from 'styled-components';
+import  styled  from 'styled-components';
 
 const StyledCircularProgress = styled(CircularProgress)`
 
   margin-top: 50%;
   margin-left: 50%
   position: relative;
+
+`
+const StyledSpan = styled.span`
+
+  color: #ffffff;
+
+`
+
+const StyledSelect = styled(Select)`
+
+  background-color: #1A1A1B;
 
 `
 
@@ -110,18 +121,18 @@ const Bitquery = ({chartPeriod, setChartPeriod}) =>{
             </StyledGridItem>
             <StyledGridItem item>    
                 <FormControl name="chartPeriod">
-                    <InputLabel id="demo-simple-select-helper-label">chartPeriod</InputLabel>
-                    <Select
+                    <InputLabel id="demo-simple-select-helper-label"><StyledSpan>Period</StyledSpan></InputLabel>
+                    <StyledSelect
                     labelId="demo-simple-select-helper-label"
                     id="demo-simple-select-helper"
                     value={chartPeriod}
                     label="chartPeriod"
                     onChange={handleChange}
                     >                    
-                        <MenuItem value={"minute"}>Minute</MenuItem>
-                        <MenuItem value={"day"}>Day</MenuItem>
-                        <MenuItem value={"month"}>Month</MenuItem>    
-                    </Select>
+                        <MenuItem value={"minute"}><StyledSpan>Minute</StyledSpan></MenuItem>
+                        <MenuItem value={"day"}><StyledSpan>Day</StyledSpan></MenuItem>
+                        <MenuItem value={"month"}><StyledSpan>Month</StyledSpan></MenuItem>    
+                    </StyledSelect>
                 </FormControl>
             </StyledGridItem>
             <StyledGridItem xs={3} sm={3} md={3} lg={3} xl={3}>
@@ -187,18 +198,18 @@ const Bitquery = ({chartPeriod, setChartPeriod}) =>{
             </StyledGridItem>   
             <StyledGridItem item xs={6} sm={6} md={6} lg={6} xl={6} >
                 <FormControl name="chartPeriod">
-                    <InputLabel id="demo-simple-select-helper-label">chartPeriod</InputLabel>
-                    <Select
+                    <InputLabel id="demo-simple-select-helper-label"><StyledSpan>Period</StyledSpan></InputLabel>
+                    <StyledSelect
                     labelId="demo-simple-select-helper-label"
                     id="demo-simple-select-helper"
                     value={chartPeriod}
                     label="chartPeriod"
                     onChange={handleChange}
                     >                    
-                        <MenuItem value={"minute"}>Minute</MenuItem>
-                        <MenuItem value={"day"}>Day</MenuItem>
-                        <MenuItem value={"month"}>Month</MenuItem>    
-                    </Select>
+                        <MenuItem value={"minute"}><StyledSpan>Minute</StyledSpan></MenuItem>
+                        <MenuItem value={"day"}><StyledSpan>Day</StyledSpan></MenuItem>
+                        <MenuItem value={"month"}><StyledSpan>Month</StyledSpan></MenuItem>    
+                    </StyledSelect>
                 </FormControl>
             </StyledGridItem>
             <StyledGridItem xs={12} sm={12} md={12} lg={12} xl={12}>

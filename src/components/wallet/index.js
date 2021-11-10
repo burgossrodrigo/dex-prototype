@@ -1,9 +1,9 @@
 import { useWeb3React } from "@web3-react/core"
-import { injected } from "../connectors"
+import { injected } from "../../connectors"
 import { Button, Box} from '@mui/material'
 import styled from 'styled-components'
 
-export default function Wallets() {
+function Wallets() {
   const { active, account, activate, deactivate } = useWeb3React()
 
 

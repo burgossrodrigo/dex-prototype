@@ -1,9 +1,12 @@
 import './App.css';
+import { useContext, createContext } from 'react';
+import GlobalStyle from './style/globalStyles'
 
 //COMPPONENTS
 
 import ChartData from './Bitquery.jsx'
 import Header from './components/header'
+import Web3Header from './components/web3Header';
 
 //HOOKS
 
@@ -15,6 +18,10 @@ import useWallet from './hooks/useWallet'
 
 import { Web3ReactProvider } from '@web3-react/core'
 import Web3 from 'web3'
+
+//MUI/MATERIAL
+
+import { useTheme, ThemeProvider, createTheme } from '@mui/material/styles';
 
 //STYLED ELEMENTS
 
@@ -39,7 +46,19 @@ const client = new ApolloClient({
 
 function App() {
 
+//THEME
+
+const darkTheme = createTheme({
+  palette: {
+    mode: 'dark',
+    primary: {
+      main: '#325AFF'
+    }
+  },
+});
+
 //HOOKS PROPS
+
 const chartPeriod = usePeriod();
 const networkName = useNetwork();
 const openWallet = useWallet();
@@ -49,15 +68,18 @@ const openWallet = useWallet();
   return (
     <>
     <Web3ReactProvider getLibrary={getLibrary}>
+        <GlobalStyle />
+        <ThemeProvider theme={darkTheme}>
         <LeftPainel>
-        <Header {...openWallet} />
-        <ApolloProvider client={client}>
-          <ChartData {...chartPeriod} {...networkName} />
-        </ApolloProvider>
-        </LeftPainel>
+          <Header  />
+          <ApolloProvider client={client}>
+            <ChartData {...chartPeriod} {...networkName} />
+          </ApolloProvider>
+          </LeftPainel>
         <RightPainel>
-          Swap
+            <Web3Header {...openWallet} />
         </RightPainel>
+        </ThemeProvider>
       </Web3ReactProvider>
     </>
   );

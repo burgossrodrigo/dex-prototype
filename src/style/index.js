@@ -9,13 +9,13 @@ export const StyledActiveTimeFrame = styled(Box)`
 
 `
 
-export const StyledUnactivedTimeFrame = styled(Box)`
+export const StyledWallet = styled(Box)`
 
     width: max-content;
     height: max-content;
     background-color: blue;
     color: white;
-    border radius: 1px 1px 1px 1px;
+
    
 
 `
@@ -30,6 +30,7 @@ export const StyledGridContainer = styled(Grid)`
 export const StyledGridItem = styled(Grid)`
 
     margin: 5px;
+    color: #FFFFFF;
 
 `
 
@@ -61,6 +62,8 @@ width: max-content;
 height: 5vh;
 position: relative;
 margin: 2vh;
+margin: 3px;
+background-color: #325AFF;
 
 `
 
@@ -79,6 +82,7 @@ export const RightPainel = styled(Box)`
     height: 100vh;
     float: right;
     z-index: 10001;
+    background-color: #373739;
 
 `
 
