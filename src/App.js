@@ -1,5 +1,4 @@
 import './App.css';
-import { useContext, createContext } from 'react';
 import GlobalStyle from './style/globalStyles'
 
 //COMPPONENTS
@@ -21,7 +20,7 @@ import Web3 from 'web3'
 
 //MUI/MATERIAL
 
-import { useTheme, ThemeProvider, createTheme } from '@mui/material/styles';
+import { ThemeProvider, createTheme } from '@mui/material/styles';
 
 //STYLED ELEMENTS
 

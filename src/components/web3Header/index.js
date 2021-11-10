@@ -1,17 +1,11 @@
 import  Wallets  from '../wallet'
 import { useWeb3React } from "@web3-react/core"
-import { Box, Modal, Grid } from "@mui/material"
+import { Box, Modal } from "@mui/material"
 import { StyledButton } from '../../style'
 import styled from 'styled-components'
 import HT from '../../assets/htlogo.png'
 import BNB from '../../assets/binancelogo.png'
 import ETHEREUM from '../../assets/ethereumlogo.png'
-
-const LeftGridContainer = styled(Grid)`
-
-    margin-top: 3vh;
-
-`
 
 const LeftWrapperHeader = styled(Box)`
 
