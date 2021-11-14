@@ -1,13 +1,5 @@
 import { useState, useEffect } from 'react'
 import { ChainId, Token, WETH, Fetcher, Route } from "@uniswap/sdk"
-import styled from 'styled-components'
-
-const Wrapper = styled.div`
-
-    display: flex;
-    flex-direction: collumn;
-
-`
 
 
 
