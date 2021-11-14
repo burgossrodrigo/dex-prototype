@@ -40,7 +40,7 @@ const WalletModal = ({openWallet, setOpenWallet}) => {
     ?
 
     <LeftWrapperHeader>
-        {chainId === null ? <div /> : chainId === 1 ? <StyledCoinLogo width={30} src={ETHEREUM} /> : chainId === 56 ? <StyledCoinLogo width={30} src={BNB} /> : <StyledCoinLogo width={30} src ={HT} />}
+        {chainId === 1 ? <StyledCoinLogo width={30} src={ETHEREUM} /> : chainId === 56 ? <StyledCoinLogo width={30} src={BNB} /> : chainId === 128 ? <StyledCoinLogo width={30} src ={HT} /> : <div />}
 
             <StyledButton size="large" variant="contained" onClick={handleOpen}>{account.substring(0, 6)}...{account.substring(account.length - 4)}</StyledButton>
             <Modal

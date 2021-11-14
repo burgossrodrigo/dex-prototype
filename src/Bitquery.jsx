@@ -71,7 +71,7 @@ const Bitquery = ({chartPeriod, setChartPeriod}) =>{
     date: {since: "${since}"}
     exchangeName: {in:["Pancake","Pancake v2"]}
     baseCurrency: {is: "0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c"}
-    quoteCurrency: {is: "0x36a92f809da8c2072b090a9e3322226c5376b207"}
+    quoteCurrency: {is: "0xe87e15b9c7d989474cb6d8c56b3db4efad5b21e8"}
     ) {
     timeInterval {
         minute(count: ${count})

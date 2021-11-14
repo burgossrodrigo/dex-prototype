@@ -58,7 +58,7 @@ z-index: -1;
 export const StyledButton = styled(Button)`
 
 
-width: max-content;
+min-width: 64px;
 height: 5vh;
 position: relative;
 margin: 2vh;

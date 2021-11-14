@@ -1,4 +1,3 @@
-import './App.css';
 import GlobalStyle from './style/globalStyles'
 
 //COMPPONENTS
@@ -6,12 +5,14 @@ import GlobalStyle from './style/globalStyles'
 import ChartData from './Bitquery.jsx'
 import Header from './components/header'
 import Web3Header from './components/web3Header';
+import Swap from './components/swap'
 
 //HOOKS
 
 import usePeriod from './hooks/usePeriod'
 import useNetwork from './hooks/useNetwork'
 import useWallet from './hooks/useWallet'
+import useHokkPrice from './hooks/useHokkPrice'
 
 //WEB3-REACT
 
@@ -54,13 +55,20 @@ const darkTheme = createTheme({
       main: '#325AFF'
     }
   },
+  typography: {
+    fontFamily: [
+      "Inter-var", 
+      "sans-serif"
+    ].join(','),
+  },
 });
 
 //HOOKS PROPS
 
-const chartPeriod = usePeriod();
-const networkName = useNetwork();
-const openWallet = useWallet();
+const chartPeriod = usePeriod()
+const networkName = useNetwork()
+const openWallet = useWallet()
+const priceForHokk = useHokkPrice()
 
 
 //MAIN RETURN
@@ -69,14 +77,15 @@ const openWallet = useWallet();
     <Web3ReactProvider getLibrary={getLibrary}>
         <GlobalStyle />
         <ThemeProvider theme={darkTheme}>
-        <LeftPainel>
+        <LeftPainel {...priceForHokk}>
           <Header  />
           <ApolloProvider client={client}>
             <ChartData {...chartPeriod} {...networkName} />
           </ApolloProvider>
           </LeftPainel>
-        <RightPainel>
+        <RightPainel {...priceForHokk}>
             <Web3Header {...openWallet} />
+            <Swap />
         </RightPainel>
         </ThemeProvider>
       </Web3ReactProvider>
